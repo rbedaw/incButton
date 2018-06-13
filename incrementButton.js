@@ -8,7 +8,7 @@ class Button extends React.Component{
 	render(){
   	return(
   		<button onClick ={this.props.onClickFunction}>
-      	+1
+      	+{this.props.incrementValue}
       </button>
   	);
   }
@@ -31,7 +31,11 @@ class App extends React.Component{
 	render(){
   	return(
     	<div>
-      	<Button onClickFunction={this.incrementCounter} />
+      	<Button incrementValue={1} onClickFunction={this.incrementCounter} />
+	<Button incrementValue={5} onClickFunction={this.incrementCounter} />
+	<Button incrementValue={10} onClickFunction={this.incrementCounter} />
+      	<Button incrementValue={100} onClickFunction={this.incrementCounter} />
+
       	<Result counter={this.state.counter} />
       </div>
     );
